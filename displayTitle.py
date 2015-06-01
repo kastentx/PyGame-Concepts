@@ -1,6 +1,6 @@
 # Nick Kasten
-# pygameTemplate.py
-# Basic Template for PyGame
+# displayTitle.py
+# Displays a Title Screen and Game Over Screen
 
 import pygame, sys
 from pygame.locals import *
@@ -82,14 +82,13 @@ while running:
     gameDisplay.fill( BLACK )
     while keyPressed() == None:
         pygame.display.update()
+        fpsClock.tick( FPS )
 
     gameDisplay.blit( gameOverSurfaceObj, gameOverRectObj ) # display game over text
     gameDisplay.blit( pressKeySurfaceObj, pressKeyRectObj ) # display press any key text
     while keyPressed() == None:
         pygame.display.update()
-    
         fpsClock.tick( FPS )
-
     
     pygame.display.update()
     fpsClock.tick( FPS )
